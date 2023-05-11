@@ -37,7 +37,7 @@ def decode_char(input)
 end
 
 def decode_word(input)
-  mess = input.split(' ')
+  mess = input.split
   mess.push(' ')
   mess.each do |item|
     decode_char(item)
