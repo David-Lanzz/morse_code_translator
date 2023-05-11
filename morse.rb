@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 CODES = {
   A: '.-',
   B: '-...',
@@ -27,7 +25,7 @@ CODES = {
   X: '-..-',
   Y: '-.--',
   Z: '--..',
-  " ": ' '
+  ' ': ' '
 }.freeze
 
 def decode_char(input)
