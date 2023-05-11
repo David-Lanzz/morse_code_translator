@@ -38,7 +38,7 @@ end
 
 def create_message(message)
   decoded_message = message.map do |word|
-    word.split.map { |code| CODES.key(code) }.join('')
+    word.split.map { |code| CODES.key(code) }.join
   end
   puts decoded_message.join(' ')
 end
