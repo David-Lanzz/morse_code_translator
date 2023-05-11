@@ -1,52 +1,54 @@
+# frozen_string_literal: true
+
 CODES = {
-    A: ".-",
-    B: "-...",
-    C: "-.-.",
-    D: "-..",
-    E: ".",
-    F: "..-.",
-    G: "--.",
-    H: "....",
-    I: "..",
-    J: ".---",
-    K: "-.-",
-    L: ".-..",
-    M: "--",
-    N: "-.",
-    O: "---",
-    P: ".--.",
-    Q: "--.-",
-    R: ".-.",
-    S: "...",
-    T: "-",
-    U: "..-",
-    V: "...-",
-    W: ".--",
-    X: "-..-",
-    Y: "-.--",
-    Z: "--..",
-}
-def decode_char(input)
-individual_input = input.split('   ')
-message = []
-individual_input.each{|i|
-  message.push(i)
-}
-message.each{
-|i|
-str = " "
- message = [i].join('').split(' ')
-message.push(" ")
-message.each {
-    |k|
-    CODES.each{
-        |key,value|
-    if value == k 
-       k = key
-    end
-    }
-    print k
-}
-}
+  A: '.-',
+  B: '-...',
+  C: '-.-.',
+  D: '-..',
+  E: '.',
+  F: '..-.',
+  G: '--.',
+  H: '....',
+  I: '..',
+  J: '.---',
+  K: '-.-',
+  L: '.-..',
+  M: '--',
+  N: '-.',
+  O: '---',
+  P: '.--.',
+  Q: '--.-',
+  R: '.-.',
+  S: '...',
+  T: '-',
+  U: '..-',
+  V: '...-',
+  W: '.--',
+  X: '-..-',
+  Y: '-.--',
+  Z: '--..'
+}.freeze
+def
+ decode_char(input)
+  individual_input = input.split('   ')
+  message = []
+  individual_input.each do |i|
+    message.push(i)
+  end
+  create_message(message)
 end
-decode_char(".-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...")
+
+def create_message(message)
+  message.each do |i|
+    message = [i].join('').split(' ')
+    message.push(' ')
+    message.each do |k|
+      CODES.each do |key, value|
+        k = key if value == k
+      end
+      print k
+    end
+  end
+end
+
+decode_char('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
