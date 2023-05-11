@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 CODES = {
   A: '.-',
   B: '-...',
