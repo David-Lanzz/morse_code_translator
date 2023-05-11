@@ -44,7 +44,7 @@ end
 
 def decode(input)
   morse = input.split('   ')
-  morse.each  do |element|
+  morse.each do |element|
     decode_word(element)
   end
 end
