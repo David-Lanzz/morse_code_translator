@@ -38,7 +38,7 @@ end
 
 def create_message(message)
   message.each do |i|
-    message = [i].join('').split(' ')
+    message = [i].join.split
     message.push(' ')
     message.each do |k|
       CODES.each do |key, value|
