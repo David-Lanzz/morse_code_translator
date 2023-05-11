@@ -37,16 +37,10 @@ def
 end
 
 def create_message(message)
-  message.each do |i|
-    message = [i].join.split
-    message.push(' ')
-    message.each do |k|
-      CODES.each do |key, value|
-        k = key if value == k
-      end
-      print k
-    end
+  decoded_message = message.map do |word|
+    word.split.map { |code| CODES.key(code) }.join('')
   end
+  puts decoded_message.join(' ')
 end
 
 decode_char('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
